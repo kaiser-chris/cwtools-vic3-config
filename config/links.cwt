@@ -204,6 +204,13 @@ links = {
 		data_source = localisation
 		prefix = flag:
 	}
+	### Flag literals eg: flag:the_boss
+	flag_scalar = {
+		output_scope = flag
+		from_data = yes
+		data_source = scalar
+		prefix = flag:
+	}
 	### Scope to the goods with specified key
 	g = {
 		output_scope = goods
@@ -4454,6 +4461,15 @@ links = {
 		from_data = yes
 		prefix = num_pending_events:
 		data_source = enum[event_category]
+	}
+	### Scope to the number of pending events in scope country
+	num_pending_events_category_custom = {
+		input_scopes = { country }
+		output_scope = value
+		type = value
+		from_data = yes
+		prefix = num_pending_events:
+		data_source = value[event_category]
 	}
 	### Checks whether a percentage of the country has a specific culture
 	culture_percent_country = {

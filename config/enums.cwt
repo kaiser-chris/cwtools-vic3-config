@@ -15,6 +15,7 @@ enums = {
         heir
         executive
         magnate
+        other
     }
     enum[character_role_title_format] = {
         from_name

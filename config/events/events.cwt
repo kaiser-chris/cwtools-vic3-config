@@ -60,7 +60,9 @@ event = {
 	# scope = enum[event_scope_types]
 
     ## cardinality = 0..1
-    category = scalar
+    category = value_set[event_category]
+	## cardinality = 0..1
+	category = enum[event_category]
 
 	## cardinality = 0..1
     dlc = <dlc>

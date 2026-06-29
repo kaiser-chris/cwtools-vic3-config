@@ -3283,9 +3283,13 @@ alias[effect:add_to_global_variable_map] = {
     value = value_field
     ## cardinality = 0..1
     value = single_alias_right[formula]
+    ## cardinality = 0..1
+    value = bool
 
-    ## cardinality = 0..inf
-    alias_name[duration] = alias_match_left[duration]
+    ## cardinality = 0..1
+    enum[duration] = int_value_field
+    ## cardinality = 0..1
+    enum[duration] = single_alias_right[formula]
 }
 
 ### Adds the event target to a variable map for the given duration
@@ -3310,9 +3314,13 @@ alias[effect:add_to_local_variable_map] = {
     value = value_field
     ## cardinality = 0..1
     value = single_alias_right[formula]
+    ## cardinality = 0..1
+    value = bool
 
-    ## cardinality = 0..inf
-    alias_name[duration] = alias_match_left[duration]
+    ## cardinality = 0..1
+    enum[duration] = int_value_field
+    ## cardinality = 0..1
+    enum[duration] = single_alias_right[formula]
 }
 
 ### Adds the event target to a variable map for the given duration
@@ -3337,9 +3345,13 @@ alias[effect:add_to_variable_map] = {
     value = value_field
     ## cardinality = 0..1
     value = single_alias_right[formula]
+    ## cardinality = 0..1
+    value = bool
 
-    ## cardinality = 0..inf
-    alias_name[duration] = alias_match_left[duration]
+    ## cardinality = 0..1
+    enum[duration] = int_value_field
+    ## cardinality = 0..1
+    enum[duration] = single_alias_right[formula]
 }
 
 ### Empties the map
