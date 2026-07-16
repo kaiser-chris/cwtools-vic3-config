@@ -11,6 +11,7 @@ types = {
     }
 }
 
+## replace_scope = { root = country this = country }
 government_type = {
     transfer_of_power = enum[transfer_of_power_types]
 

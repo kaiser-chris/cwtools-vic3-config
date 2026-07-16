@@ -258,6 +258,13 @@ alias[trigger:custom_description] = {
     ## cardinality = 0..1
     object = scope_field
 
+    ## cardinality = 0..1
+    value = scope_field
+    ## cardinality = 0..1
+    value = value_field
+    ## cardinality = 0..1
+    value = single_alias_right[formula]
+
     alias_name[trigger] = alias_match_left[trigger]
 }
 

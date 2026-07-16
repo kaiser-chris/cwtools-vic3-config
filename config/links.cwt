@@ -5098,6 +5098,12 @@ links = {
 		from_argument = yes
 		data_source = scope[political_movement]
 	}
+	# Game date in days from year 0
+	game_date = {
+		input_scopes = { any }
+		output_scope = value
+		type = value
+	}
 
 	# script value & static value
 
