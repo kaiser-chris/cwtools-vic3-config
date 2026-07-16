@@ -93,6 +93,12 @@ single_alias[weight] = {
     alias_name[weight_operation] = alias_match_left[weight_operation]
 }
 
+alias[weight_operation:<scripted_modifier>] = bool
+alias[weight_operation:<scripted_modifier>] = {
+    ## cardinality = 0..inf
+    $parameter = $parameter_value
+}
+
 alias[weight_operation:base] = value_field
 alias[weight_operation:base] = scope_field
 alias[weight_operation:base] = single_alias_right[formula]
@@ -113,41 +119,6 @@ alias[weight_operation:modifier] = {
     add = single_alias_right[formula]
 
     ## cardinality = 0..1
-    subtract = value_field
-    ## cardinality = 0..1
-    subtract = scope_field
-    ## cardinality = 0..1
-    subtract = single_alias_right[formula]
-
-    ## cardinality = 0..1
-    multiply = value_field
-    ## cardinality = 0..1
-    multiply = scope_field
-    ## cardinality = 0..1
-    multiply = single_alias_right[formula]
-
-    ## cardinality = 0..1
-    divide = value_field
-    ## cardinality = 0..1
-    divide = scope_field
-    ## cardinality = 0..1
-    divide = single_alias_right[formula]
-
-    ## cardinality = 0..1
-    modulo = value_field
-    ## cardinality = 0..1
-    modulo = scope_field
-    ## cardinality = 0..1
-    modulo = single_alias_right[formula]
-
-    ## cardinality = 0..1
-    value = value_field
-    ## cardinality = 0..1
-    value = scope_field
-    ## cardinality = 0..1
-    value = single_alias_right[formula]
-
-    ## cardinality = 0..1
     factor = value_field
     ## cardinality = 0..1
     factor = scope_field
@@ -156,6 +127,9 @@ alias[weight_operation:modifier] = {
 
     ## cardinality = 0..1
     trigger = single_alias_right[trigger_clause]
+
+    ## cardinality = 0..inf
+    <scripted_modifier> = bool
 
     ## cardinality = 0..inf
     alias_name[trigger] = alias_match_left[trigger]
