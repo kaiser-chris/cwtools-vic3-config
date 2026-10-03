@@ -132,6 +132,7 @@ single_alias[on_action] = {
     ### on_actions can define a fallback on_action.
     ### If no events/on_actions are run by the on_action, the fallback gets called instead.
     ### Avoid creating infinite fallback loops, or the game may be prevented from advancing time!
+    ## cardinality  = 0..1
     fallback = <on_action>
 }
 
