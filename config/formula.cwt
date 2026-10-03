@@ -109,8 +109,6 @@ alias[weight_operation:factor] = single_alias_right[formula]
 
 alias[weight_operation:modifier] = value_field
 alias[weight_operation:modifier] = {
-    # Hardcoded to prevent potential plugin parser issues
-
     ## cardinality = 0..1
     add = value_field
     ## cardinality = 0..1
@@ -127,9 +125,6 @@ alias[weight_operation:modifier] = {
 
     ## cardinality = 0..1
     trigger = single_alias_right[trigger_clause]
-
-    ## cardinality = 0..inf
-    <scripted_modifier> = bool
 
     ## cardinality = 0..inf
     alias_name[trigger] = alias_match_left[trigger]

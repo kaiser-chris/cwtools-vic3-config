@@ -908,6 +908,7 @@ enums = {
 		treaty
 		valid_mass_migration_culture
 		war_participant
+		container
 	}
 
 }

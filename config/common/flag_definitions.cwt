@@ -19,6 +19,7 @@ flag_definition = {
         ## property_value_prefix = list
         coa = <coat_of_arms_template_list>
 
+        ## cardinality = 0..1
         subject_canton = <coat_of_arm>
 
         ## cardinality = 0..1
@@ -45,6 +46,7 @@ flag_definition = {
         ## cardinality = 0..1
         trigger = single_alias_right[trigger_clause]
 
+        ## cardinality = 0..1
         priority = int
     }
 }

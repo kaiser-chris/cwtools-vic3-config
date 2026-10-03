@@ -3639,3 +3639,30 @@ alias[trigger:days_since_movement_type_defeated] = {
     value == value_field
     value == single_alias_right[formula]
 }
+
+## scopes = { any }
+### True if a named script container exists
+alias[trigger:container_exists] = value[container_name]
+
+## scopes = { container }
+### True if the script container in scope has any tags
+alias[trigger:has_any_tags] = bool
+
+## scopes = { container }
+### True if the script container in scope has a name
+alias[trigger:has_name] = bool
+
+## scopes = { container }
+### True if the script container in scope has a parent
+alias[trigger:has_parent] = bool
+
+## scopes = { container }
+### True if the script container in scope has the given tag (`has_tag = <tag>`)
+alias[trigger:has_tag] = value[container_tag]
+
+## scopes = { container }
+### True if the script container in scope has all of the given tags
+alias[trigger:has_tags] = {
+    ## cardinality = 0..inf
+    value[container_tag]
+}

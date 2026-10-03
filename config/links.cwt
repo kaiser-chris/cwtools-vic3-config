@@ -429,19 +429,11 @@ links = {
 		input_scopes = province
 		output_scope = hq
 	}
-	### Scope to the law with specified tag
+	### Scope to the scoped country's active law in the named law group (active_law:lawgroup_trade_policy)
 	active_law = {
 		output_scope = law
 		from_data = yes
 		prefix = active_law:
-		data_source = <law_group>
-	}
-	### Scope to the scoped country's active law in the named law group (active_law:lawgroup_trade_policy)
-	active_law_group = {
-		input_scopes = country
-		output_scope = law
-		from_data = yes
-		prefix = active_law_group:
 		data_source = <law_group>
 	}
 	progressiveness = {
@@ -5098,11 +5090,33 @@ links = {
 		from_argument = yes
 		data_source = scope[political_movement]
 	}
-	# Game date in days from year 0
+	### Game date in days from year 0
 	game_date = {
 		input_scopes = { any }
 		output_scope = value
 		type = value
+	}
+	### Scope to the name (as a flag) of a script container (`name ?= flag:<name>`)
+	name = {
+		input_scopes = { container }
+		output_scope = flag
+		type = scope
+	}
+	### Scope to the parent of a script container
+	parent = {
+		input_scopes = { container }
+		output_scope = any
+		type = scope
+	}
+	### Scope to a named script container (example: `container:<name>`)
+	container = {
+		input_scopes = { any }
+		output_scope = container
+		type = scope
+		prefix = container:
+		from_data = yes
+		from_argument = yes
+		data_source = value[container_name]
 	}
 
 	# script value & static value

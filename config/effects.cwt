@@ -3427,3 +3427,69 @@ alias[effect:add_maneuvers] = {
 ## scopes = { political_movement }
 ### Sets or clears the defeat date for the movement in scope
 alias[effect:set_movement_defeated] = bool
+
+## scopes = { any }
+### Creates a script container: a standalone scope that can hold variables, lists and maps.
+alias[effect:create_container] = {
+    ### Sets (or changes) the name of the script container in scope; accepts a literal or a flag reference (var:/scope:/flag:); reachable later via container:my_name
+    ## cardinality = 0..1
+    name = scope_field
+    ### Sets (or changes) the name of the script container in scope; accepts a literal or a flag reference (var:/scope:/flag:); reachable later via container:my_name
+    ## cardinality = 0..1
+    name = value_set[container_name]
+
+    ### Sets the parent of the script container in scope; the container is destroyed when the parent becomes invalid
+    ## cardinality = 0..1
+    parent = scope_field
+
+    ### Adds a tags to the script container
+    ## cardinality = 0..1
+    tags = {
+        ## cardinality = 0..inf
+        value_set[container_tag]
+    }
+
+    ### Effect run when the container was created
+    ## cardinality = 0..1
+    ## push_scope = container
+    on_created = single_alias_right[effect_clause]
+
+    ## cardinality = 0..1
+    save_scope_as = value_set[event_target]
+}
+
+## scopes = { container }
+### Adds a tag to the script container in scope.
+alias[effect:add_tag] = value_set[container_tag]
+
+## scopes = { container }
+### Clears the name of the script container in scope.
+alias[effect:clear_name] = bool
+
+## scopes = { container }
+### Clears the parent of the script container in scope, making it freestanding.
+alias[effect:clear_parent] = bool
+
+## scopes = { container }
+### Removes all tags from the script container in scope.
+alias[effect:clear_tags] = bool
+
+## scopes = { container }
+### Destroys the script container in scope.
+alias[effect:destroy_container] = bool
+
+## scopes = { container }
+### Removes a tag from the script container in scope.
+alias[effect:remove_tag] = value[container_tag]
+
+## scopes = { container }
+### Sets (or changes) the name of the script container in scope; accepts a literal or a flag reference (var:/scope:/flag:); reachable later via container:my_name.
+alias[effect:set_name] = scope_field
+## scopes = { container }
+### Sets (or changes) the name of the script container in scope; accepts a literal or a flag reference (var:/scope:/flag:); reachable later via container:my_name.
+alias[effect:set_name] = value_set[container_name]
+
+## scopes = { container }
+### Sets the parent of the script container in scope; the container is destroyed when the parent becomes invalid.
+alias[effect:set_parent] = scope_field
+

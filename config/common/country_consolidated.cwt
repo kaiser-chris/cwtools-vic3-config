@@ -4,7 +4,9 @@ types = {
         path = "game/common/country_definitions"
         path_extension = .txt
         localisation = {
+            ## required
 			name = "$"
+            ## required
 			adjective = "$_ADJ"
 		}
         subtype[dynamic] = {
@@ -35,6 +37,12 @@ types = {
     type[country_formation] = {
         path = "game/common/country_formation"
         path_extension = .txt
+        localisation = {
+            ## required
+            name = $
+            ## required
+            adjective = $_ADJ
+        }
         subtype[major] = {
             is_major_formation = yes
         }
